@@ -1,0 +1,7 @@
+<p>Search Result</p>
+<% if @sellers.present? %>
+<%= render "result"%>
+<%= link_to "Back", sellers_path%>
+<%else%>
+	<b>No Record Found</b>
+<%end%>	

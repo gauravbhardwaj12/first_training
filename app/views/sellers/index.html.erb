@@ -1,0 +1,8 @@
+<div class="text_color">Seller Listing</div>
+<%= form_tag(search_sellers_path, method: :get) do  %>
+    <%= text_field_tag :name %>
+<%= submit_tag 'Save' %>
+<%end%>
+<%= render "result"%>
+<br/>
+<%= link_to "Create Seller", new_seller_path %>
