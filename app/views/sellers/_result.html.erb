@@ -14,6 +14,10 @@
 
 		    </td>
 		    <td><%= link_to "Destroy", seller, method: :delete , data: {confirm: "are you sure ? you want to destroy #{seller.name}"}%></td>
+		    <td>
+		    	<%=link_to "view addresses", seller_addresses_path(seller)%>
+
+		    </td>
 		</tr>
 	<%end%>
 

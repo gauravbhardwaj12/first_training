@@ -1,0 +1,39 @@
+<table >
+	<tr>
+		<th>Id :</th>
+		<th>Address1 :</th>
+		<th>Address2 :</th>
+		<th>City :</th>
+		<th>State :</th>
+		<th>Zipcode :</th>
+		<th>Seller Name :</th>
+		<th> Action:</th>
+	</tr>
+	<% @addresses.each do |address|%>
+		<tr>
+			<td><%=address.id%></td>
+			<td><%=address.address1%></td>
+		    <td><%=address.address2%></td>
+		    <td><%=address.city%></td>
+		    <td><%=address.state%></td>
+		    <td><%=address.zipcode%></td>
+		    <td><%=address.seller.name if address.seller.present? %></td>
+		    <td><%= link_to "Edit", edit_seller_address_path(@seller,address) %> |
+		    	<%= link_to "Show", [@seller,address] %>
+		    	<%= link_to "Destroy", [@seller,address] , method: :delete , data: {confirm: "Are you sure?"}%>
+		    </td>
+		   <!--  
+		    <td><</td>
+		   
+		    <td><%#= link_to "Destroy", seller, method: :delete , data: {confirm: "are you sure ? you want to destroy #{seller.name}"}%></td>
+		    <td>
+		    	<%#=link_to "view addresses", seller_addresses_path(seller)%>
+
+		    </td> -->
+		</tr>
+	<%end%>
+
+</table>
+<br/>
+<%= link_to "new address" , new_seller_address_path(@seller)%>
+<%= link_to "back to seller" , sellers_path%>

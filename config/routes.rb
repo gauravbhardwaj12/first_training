@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :sellers do 
+    resources :addresses
     collection do 
       get 'search'
     end
